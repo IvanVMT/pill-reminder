@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import { Dashboard } from './pages/Dashboard';
 import { AddMedication } from './pages/AddMedication';
@@ -7,7 +7,7 @@ import { NotificationManager } from './components/NotificationManager';
 
 function App() {
   return (
-    <BrowserRouter basename={import.meta.env.BASE_URL}>
+    <HashRouter>
       <NotificationManager />
       <Routes>
         <Route path="/" element={<Layout />}>
@@ -16,7 +16,7 @@ function App() {
           <Route path="history" element={<History />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
